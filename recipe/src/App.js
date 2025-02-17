@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+import Menu from './Menu';
+
 // function App() {
 //   return (
 //     <div className="App">
@@ -54,40 +56,6 @@ const data = [{
     "Top them with lettuce, tomatoes, and cheese."
   ]}
 ];
-
-function Recipe({ name, ingredients, steps }) {
-  return (
-    <section id={name.toLowerCase().replace(/ /g, "-")}>
-      <h1>{name}</h1>
-      <ul className="ingredients">
-        {ingredients.map((ingredient, i) => (
-          <li key={i}>{ingredient.name}</li>
-        ))}
-      </ul>
-      <section className="instructions">
-        <h2>Cooking Instructions</h2>
-        {steps.map((step, i) => (
-          <p key={i}>{step}</p>
-        ))}
-      </section>
-    </section>
-  );
-}
-
-function Menu({ title, recipes }) {
-  return (
-    <article>
-    <header>
-      <h1>{title}</h1>
-    </header>
-    <div className="recipes">
-      {recipes.map((recipe, i) => (
-        <Recipe key={i} {...recipe} />
-      ))}
-    </div>
-    </article>
-  );
-}
 
 function App() {
   return <Menu recipes={data} title="Delicious Recipes" />
