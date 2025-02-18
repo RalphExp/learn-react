@@ -28,6 +28,8 @@ export default function ColorProvider({ children }) {
   const removeColor = id => setColors(colors.filter(color => color.id !== id));
 
   return (
+    // ColorContext.Provider provides { colors, addColor, removeColor, rateColor }
+    // to its children
     <ColorContext.Provider value={{ colors, addColor, removeColor, rateColor }}>
       {children}
     </ColorContext.Provider>

@@ -5,11 +5,13 @@ import { useColors } from "./ColorProvider";
 export default function AddColorForm() {
   const [titleProps, resetTitle] = useInput("");
   const [colorProps, resetColor] = useInput("#000000");
-  const { addColor } = useColors();
+  const { colors, addColor } = useColors();
 
   const submit = e => {
     e.preventDefault();
     addColor(titleProps.value, colorProps.value);
+    // we can see the current colors in the console
+    // console.log(colors)
     resetTitle();
     resetColor();
   };
