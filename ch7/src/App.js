@@ -1,13 +1,15 @@
 import './App.css';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Checkbox from './Checkbox'
 import TwoStates from './TwoStates'
 import WordCount from './WorkCount';
+import MousePosition from './MousePosition';
 
 export default function App() {
   // component1: Checkbox
   // component2: TwoStates
   // component3: WordCount
+  // component4: MousePosition
 
   const useAnyKeyToRender = () => {
     const [, forceRender] = useState();
@@ -28,6 +30,8 @@ export default function App() {
       <TwoStates/>
       <hr/>
       <WordCount/>
+      <hr/>
+      <MousePosition/>
     </>
   );
 }
