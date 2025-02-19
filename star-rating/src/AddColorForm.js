@@ -8,7 +8,7 @@ export default function AddColorForm() {
   const { colors, addColor } = useColors();
 
   const submit = e => {
-    e.preventDefault();
+    e.preventDefault(); // don't send request, only changes UI
     addColor(titleProps.value, colorProps.value);
     // we can see the current colors in the console
     // console.log(colors)
