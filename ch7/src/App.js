@@ -1,9 +1,13 @@
 import './App.css';
 import { useEffect, useState } from 'react';
+import { Routes, Route, Link } from "react-router-dom";
+
+import Home from './Home'
 import Checkbox from './Checkbox'
 import TwoStates from './TwoStates'
 import WordCount from './WorkCount';
 import MousePosition from './MousePosition';
+import Error404 from './Error404';
 
 export default function App() {
   // component1: Checkbox
@@ -22,17 +26,16 @@ export default function App() {
 
   useAnyKeyToRender();
   return (
-    <>
-      <h1>Open the console to see the log.</h1>
-      <hr/>
-      <Checkbox/>
-      <hr/>
-      <TwoStates/>
-      <hr/>
-      <WordCount/>
-      <hr/>
-      <MousePosition/>
-    </>
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/checkbox" element={<Checkbox/>} />
+        <Route path="/twostate" element={<TwoStates/>} />
+        <Route path="/wordcount" element={<WordCount/>} />
+        <Route path="/mousepos" element={<MousePosition/>} />
+        <Route path="*" element={<Error404 />} />
+      </Routes>
+    </div>      
   );
 }
 
