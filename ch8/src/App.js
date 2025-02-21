@@ -1,14 +1,16 @@
 import './App.css';
 import React from 'react';
-import GithubUser from './GithubUser';
+import { useState } from 'react';
+import GitHubUser from './GitHubUser';
+import SearchForm from './SearchForm';
 import Visualize from './Visualize';
 
 export default function App() {
-    console.log("loading app")
-    return (
-      <>
-        <GithubUser />
-        {/* <Visualize /> */}
-      </>
-    );
+  const [login, setLogin] = useState("moontahoe");
+  return (
+    <>
+      <SearchForm value={login} onSearch={setLogin} />
+      <GitHubUser login={login} />
+    </>
+  );
 }
