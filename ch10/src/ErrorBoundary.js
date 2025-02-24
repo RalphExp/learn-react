@@ -9,10 +9,9 @@ export default class ErrorBoundary extends Component {
 
   render() {
     const { error } = this.state;
-    const { children, fallback } = this.props;
+    const { children, fallback: Fallback } = this.props;
 
-    if (error)
-        return <fallback error={error} />;
+    if (error) return <Fallback error={error} />;
     return children;
   }
 }
